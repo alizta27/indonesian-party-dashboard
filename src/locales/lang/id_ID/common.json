@@ -1,0 +1,22 @@
+{
+	"common": {
+		"okText": "OK",
+		"closeText": "Tutup",
+		"cancelText": "Batal",
+		"loadingText": "Loading...",
+		"saveText": "Simpan",
+		"delText": "Hapus",
+		"resetText": "Reset",
+		"searchText": "Cari",
+		"queryText": "Cari",
+
+		"inputText": "Tolong isi",
+		"chooseText": "Tolong pilih",
+
+		"redo": "Refresh",
+		"back": "Kembali",
+
+		"light": "Terang",
+		"dark": "Gelap"
+	}
+}
