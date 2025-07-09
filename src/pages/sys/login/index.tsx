@@ -1,4 +1,4 @@
-import PlaceholderImg from "@/assets/images/background/placeholder.svg";
+// import PlaceholderImg from "@/assets/images/background/placeholder.svg";
 import LocalePicker from "@/components/locale-picker";
 import Logo from "@/components/logo";
 import { GLOBAL_CONFIG } from "@/global-config";
