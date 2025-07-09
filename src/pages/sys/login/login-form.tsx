@@ -40,8 +40,10 @@ export function LoginForm({
 
   const form = useForm<SignInReq>({
     defaultValues: {
-      username: DB_USER[0].username,
-      password: DB_USER[0].password,
+      email: "",
+      password: "",
+      // username: DB_USER[0].username,
+      // password: DB_USER[0].password,
       twoFactorCode: "123456",
     },
   });
@@ -68,22 +70,19 @@ export function LoginForm({
           <div className="flex flex-col items-center gap-2 text-center">
             <h1 className="text-2xl font-bold">Login ke akun anda</h1>
             <p className="text-balance text-sm text-muted-foreground">
-              Masukkan username dan password anda
+              Masukkan email dan password anda
             </p>
           </div>
 
           <FormField
             control={form.control}
-            name="username"
-            rules={{ required: t("sys.login.accountPlaceholder") }}
+            name="email"
+            rules={{ required: "Please input your email" }}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("sys.login.userName")}</FormLabel>
+                <FormLabel>{"Email"}</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder={DB_USER.map((user) => user.username).join("/")}
-                    {...field}
-                  />
+                  <Input placeholder="okk@h_gate.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -132,7 +131,8 @@ export function LoginForm({
           {/* 登录按钮 */}
           <Button
             type="submit"
-            className="w-full !text-primary font-semibold cursor-pointer"
+            className="w-full !bg-primary font-semibold cursor-pointer"
+            variant="default"
           >
             {loading && <Loader2 className="animate-spin mr-2" />}
             {t("sys.login.loginButton")}

@@ -34,7 +34,7 @@ export interface OrgAdministrator {
 export interface UserInfo {
   id: string;
   email: string;
-  username: string;
+  name: string;
   password?: string;
   avatar?: string;
   roles?: Role[];
@@ -79,11 +79,10 @@ export interface CommonOptions {
 }
 export interface User extends CommonOptions {
   id: string; // uuid
-  username: string;
+  name: string;
   password: string;
   email: string;
   phone?: string;
-  avatar?: string;
 }
 
 export interface Role extends CommonOptions {

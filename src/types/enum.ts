@@ -66,3 +66,12 @@ export enum HtmlDataAttribute {
   ColorPalette = "data-color-palette",
   ThemeMode = "data-theme-mode",
 }
+
+export enum OrgLevel {
+  "DPP",
+  "DPD",
+  "DPC",
+  "PAC",
+  "PAR",
+  "PR",
+}

@@ -437,23 +437,21 @@ export const DB_MENU: Menu[] = [
 export const DB_USER: User[] = [
   {
     id: "user_admin_id",
-    username: "admin",
+    name: "admin",
     password: "demo1234",
-    avatar: faker.image.avatarGitHub(),
     email: "admin@h_gate.com",
   },
   {
     id: "user_test_id",
-    username: "test",
+    name: "test",
     password: "demo1234",
-    avatar: faker.image.avatarGitHub(),
     email: "test@h_gate.com",
   },
   {
     id: "user_guest_id",
-    username: "guest",
+    name: "guest",
     password: "demo1234",
-    avatar: faker.image.avatarGitHub(),
+    // avatar: faker.image.avatarGitHub(),
     email: "guest@h_gate.com",
   },
 ];

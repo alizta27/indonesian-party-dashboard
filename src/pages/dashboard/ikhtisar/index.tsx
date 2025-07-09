@@ -6,6 +6,7 @@ import { Text, Title } from "@/ui/typography";
 import { rgbAlpha } from "@/utils/theme";
 import { useState } from "react";
 import BannerCard from "./banner-card";
+import { useNavigate } from "react-router";
 
 const quickStats = [
   {
@@ -140,6 +141,7 @@ const totalIncome = {
 
 export default function Workbench() {
   const [activeTab, setActiveTab] = useState("Semua Kepengurusan");
+  const navigate = useNavigate();
   const chartOptions = useChart({
     xaxis: { categories: monthlyRevenue.categories },
     chart: { toolbar: { show: false } },
@@ -255,7 +257,7 @@ export default function Workbench() {
               Kepengurusan Terbaru:
             </Text>
             <div className="flex gap-2">
-              {["Semua Kepengurusan", "DPD", "DPC", "PAC", "PAR", "PR"].map(
+              {["Semua Kepengurusan", "DPD", "DPC", "PAC", "PR", "PAR"].map(
                 (tab) => (
                   <Button
                     key={tab}
@@ -294,7 +296,11 @@ export default function Workbench() {
             </table>
           </div>
           <div className="flex items-center justify-between mt-4 gap-2">
-            <Button variant="outline" className="flex-1 cursor-pointer">
+            <Button
+              onClick={() => navigate("/kepengurusan")}
+              variant="outline"
+              className="flex-1 cursor-pointer"
+            >
               Lihat Semua
             </Button>
           </div>

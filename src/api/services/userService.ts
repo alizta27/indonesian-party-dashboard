@@ -1,9 +1,10 @@
 import apiClient from "../apiClient";
 
 import type { UserInfo, UserToken } from "#/entity";
+import { supabase } from "@/lib/supabase";
 
 export interface SignInReq {
-  username: string;
+  email: string;
   password: string;
   twoFactorCode: string;
 }
@@ -21,6 +22,21 @@ export enum UserApi {
   User = "/user",
 }
 
+const sbSignIn = async (payload: { email: string; password: string }) => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: payload.email,
+    password: payload.password,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return {
+    accessToken: data.session?.access_token,
+    refreshToken: data.session?.refresh_token,
+    user: data.user,
+  };
+};
+
 const signin = (data: SignInReq) =>
   apiClient.post<SignInRes>({ url: UserApi.SignIn, data });
 const signup = (data: SignUpReq) =>
@@ -34,4 +50,5 @@ export default {
   signup,
   findById,
   logout,
+  sbSignIn,
 };
