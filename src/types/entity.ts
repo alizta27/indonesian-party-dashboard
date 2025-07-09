@@ -6,6 +6,15 @@ export interface UserToken {
   refreshToken?: string;
 }
 
+export interface OrgMember {
+  id: string;
+  address: string;
+  gender: string;
+  birth_date: string;
+  religion: string;
+  full_name: string;
+}
+
 export interface Organization {
   id: string;
   structure_level: string;

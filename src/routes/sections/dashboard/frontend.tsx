@@ -3,7 +3,7 @@ import { Navigate } from "react-router";
 import { Component } from "./utils";
 
 export const frontendDashboardRoutes: RouteObject[] = [
-  { path: "ikhtisar", element: Component("/pages/dashboard/workbench") },
+  { path: "ikhtisar", element: Component("/pages/dashboard/ikhtisar") },
   { path: "analysis", element: Component("/pages/dashboard/analysis") },
   { path: "blank", element: Component("/pages/sys/others/blank") },
   {
@@ -13,6 +13,18 @@ export const frontendDashboardRoutes: RouteObject[] = [
   {
     path: "kepengurusan",
     element: Component("/pages/organization-structure/organization"),
+  },
+  {
+    path: "upload-kepengurusan",
+    element: Component("/pages/organization-structure/upload"),
+  },
+  {
+    path: "anggota",
+    element: Component("/pages/membership/member"),
+  },
+  {
+    path: "buat-kta",
+    element: Component("/pages/membership/create-kta"),
   },
   // Unused
   {

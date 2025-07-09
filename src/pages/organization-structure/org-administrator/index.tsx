@@ -98,7 +98,7 @@ export default function UserPage() {
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <div>Data Pengurus</div>
+          <div>Daftar Pengurus</div>
           <Button onClick={() => {}}>Filter</Button>
         </div>
       </CardHeader>

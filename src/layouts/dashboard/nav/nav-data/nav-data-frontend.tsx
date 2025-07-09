@@ -32,7 +32,7 @@ export const frontendNavData: NavProps["data"] = [
       },
       {
         title: "Upload",
-        path: "/upload-struktur",
+        path: "/upload-kepengurusan",
         icon: <Icon icon="solar:cloud-upload-bold-duotone" size="24" />,
       },
     ],

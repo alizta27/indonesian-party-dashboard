@@ -1,60 +1,49 @@
 import { Icon } from "@/components/icon";
-import { Badge } from "@/ui/badge";
+// import { usePathname, useRouter } from "@/routes/hooks";
 import { Button } from "@/ui/button";
 import { Card, CardContent, CardHeader } from "@/ui/card";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import type { Organization } from "#/entity";
-import { BasicOrganizationStatus } from "#/enum";
+import type { OrgMember } from "#/entity";
+import { USERS } from "./user";
 import SimpleSearchBar from "@/layouts/components/simple-search-bar";
 import { useState } from "react";
-import { ORGANIZATION } from "./user";
 
 export default function UserPage() {
   // const { push } = useRouter();
   // const pathname = usePathname();
   const [searchValue, setSearchValue] = useState("");
 
-  const columns: ColumnsType<Organization> = [
+  const columns: ColumnsType<OrgMember> = [
     {
-      title: "Kepengurusan",
-      dataIndex: "structure_level",
-      width: 120,
+      title: "Nama",
+      dataIndex: "full_name",
     },
     {
-      title: "Daerah",
-      dataIndex: "region",
-      render: (region) => <p className="pr-3">{region}</p>,
+      title: "Alamat",
+      dataIndex: "address",
     },
     {
-      title: "Periode Kepengurusan",
-      dataIndex: "period",
-      width: 160,
+      title: "Jenis Kelamin",
+      dataIndex: "gender",
     },
     {
-      title: "Status",
-      dataIndex: "status",
-      align: "center",
-      width: 80,
-      render: (status) => (
-        <Badge
-          variant={
-            status === BasicOrganizationStatus.ACTIVE ? "success" : "error"
-          }
-        >
-          {status === BasicOrganizationStatus.ACTIVE ? "Berlaku" : "Habis"}
-        </Badge>
-      ),
+      title: "Tanggal Lahir",
+      dataIndex: "birth_date",
     },
     {
-      title: "Aksi",
+      title: "Agama",
+      dataIndex: "religion",
+    },
+    {
+      title: "KTA",
       key: "operation",
       align: "center",
       width: 100,
       render: () => (
         <Button variant="ghost" className="w-auto px-2" size="icon">
-          <Icon icon="solar:file-download-linear" size={18} />
-          Download SK
+          <Icon icon="solar:user-id-outline" size={18} />
+          Download KTA
         </Button>
       ),
     },
@@ -64,14 +53,14 @@ export default function UserPage() {
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <div>Daftar Kepengurusan</div>
+          <div>Daftar Anggota</div>
           <Button onClick={() => {}}>Filter</Button>
         </div>
       </CardHeader>
       <CardContent>
         <div className="mb-3">
           <SimpleSearchBar
-            placeholder="Cari berdasarkan daerah"
+            placeholder="Cari berdasarkan nama"
             value={searchValue}
             onChange={setSearchValue}
           />
@@ -83,7 +72,7 @@ export default function UserPage() {
           scroll={{ x: "max-content" }}
           pagination={false}
           columns={columns}
-          dataSource={ORGANIZATION}
+          dataSource={USERS}
         />
       </CardContent>
     </Card>
