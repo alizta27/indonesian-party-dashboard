@@ -9,12 +9,12 @@ import { faker } from "@faker-js/faker";
 import { Timeline } from "antd";
 
 export default function ProfileTab() {
-	const { username } = useUserInfo();
+	const { email } = useUserInfo();
 	const AboutItems = [
 		{
 			icon: <Icon icon="fa-solid:user" size={18} />,
 			label: "Full Name",
-			val: username,
+			val: email,
 		},
 		{
 			icon: <Icon icon="eos-icons:role-binding" size={18} />,
@@ -39,7 +39,7 @@ export default function ProfileTab() {
 		{
 			icon: <Icon icon="ic:baseline-email" size={18} />,
 			label: "Email",
-			val: username,
+			val: email,
 		},
 	];
 

@@ -8,7 +8,9 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"preinstall": "lefthook install"
+		"preinstall": "lefthook install",
+		"wdev": "wrangler dev",
+		"wdeploy": "tsc && vite build && wrangler deploy"
 	},
 	"dependencies": {
 		"@ant-design/cssinjs": "^1.22.0",
@@ -90,20 +92,17 @@
 		"tailwindcss": "^4.1.3",
 		"typescript": "^5.6.3",
 		"vite": "^6.2.0",
-		"vite-tsconfig-paths": "^5.1.2"
+		"vite-tsconfig-paths": "^5.1.2",
+		"wrangler": "^4.24.0"
 	},
 	"engines": {
 		"node": "20.*"
 	},
 	"packageManager": "pnpm@10.8.0",
 	"msw": {
-		"workerDirectory": [
-			"public"
-		]
+		"workerDirectory": ["public"]
 	},
 	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		]
+		"extends": ["@commitlint/config-conventional"]
 	}
 }

@@ -1,3 +1,4 @@
+import { CITY_BPS_CODE } from "@/constants";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -39,4 +40,13 @@ export const urlJoin = (...parts: string[]) => {
 		})
 		.filter(Boolean);
 	return `/${result.join("/")}`;
+};
+
+export const capitalizeFirst = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+export const getKabOrKotaBaseOnBpsCode = (pbsCode: string) => {
+	if (CITY_BPS_CODE.includes(pbsCode)) {
+		return "Kota";
+	}
+	return "Kab.";
 };

@@ -1,0 +1,13 @@
+// name = "cf-proxy"
+// compatibility_date = "2025-07-09"
+// compatibility_flags = []
+// main = "src/index.ts"
+// type = "module"
+{
+  "name": "party-with-proxy",
+  "compatibility_date": "2025-07-10",
+  "main": "src/index.ts",
+  "assets": {
+    "directory": "./dist"
+  }
+}

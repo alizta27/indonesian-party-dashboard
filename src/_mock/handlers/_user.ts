@@ -6,9 +6,9 @@ import { http, HttpResponse } from "msw";
 import { DB_MENU, DB_PERMISSION, DB_ROLE, DB_ROLE_PERMISSION, DB_USER, DB_USER_ROLE } from "../assets_backup";
 
 const signIn = http.post(`/api${UserApi.SignIn}`, async ({ request }) => {
-	const { username, password } = (await request.json()) as Record<string, string>;
+	const { email, password } = (await request.json()) as Record<string, string>;
 
-	const user = DB_USER.find((item) => item.username === username);
+	const user = DB_USER.find((item) => item.email === email);
 
 	if (!user || user.password !== password) {
 		return HttpResponse.json({
@@ -20,7 +20,9 @@ const signIn = http.post(`/api${UserApi.SignIn}`, async ({ request }) => {
 	const { password: _, ...userWithoutPassword } = user;
 
 	// user role
-	const roles = DB_USER_ROLE.filter((item) => item.userId === user.id).map((item) => DB_ROLE.find((role) => role.id === item.roleId));
+	const roles = DB_USER_ROLE.filter((item) => item.userId === user.id).map((item) =>
+		DB_ROLE.find((role) => role.id === item.roleId),
+	);
 
 	// user permissions
 	const permissions = DB_ROLE_PERMISSION.filter((item) => roles.some((role) => role?.id === item.roleId)).map((item) =>

@@ -12,7 +12,7 @@ export default function UserDetail() {
 	return (
 		<Card>
 			<CardContent>
-				<p>This is the detail page of {user?.username}</p>
+				<p>This is the detail page of {user?.email}</p>
 			</CardContent>
 		</Card>
 	);

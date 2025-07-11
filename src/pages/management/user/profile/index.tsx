@@ -12,7 +12,7 @@ import ProjectsTab from "./projects-tab";
 import TeamsTab from "./teams-tab";
 
 function UserProfile() {
-	const { avatar, username } = useUserInfo();
+	const { avatar, email } = useUserInfo();
 
 	const bgStyle: CSSProperties = {
 		position: "absolute",
@@ -57,7 +57,7 @@ function UserProfile() {
 					<div className="flex flex-col justify-center items-center gap-2">
 						<div className="flex items-center gap-2">
 							<Title as="h5" className="text-xl">
-								{username}
+								{email}
 							</Title>
 							<Icon icon="heroicons:check-badge-solid" size={20} color={themeVars.colors.palette.primary.default} />
 						</div>

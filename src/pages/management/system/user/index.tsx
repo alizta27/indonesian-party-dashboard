@@ -27,7 +27,7 @@ export default function UserPage() {
 					<div className="flex">
 						<img alt="" src={record.avatar} className="h-10 w-10 rounded-full" />
 						<div className="ml-2 flex flex-col">
-							<span className="text-sm">{record.username}</span>
+							<span className="text-sm">{record.email}</span>
 							<span className="text-xs text-text-secondary">{record.email}</span>
 						</div>
 					</div>
@@ -46,7 +46,11 @@ export default function UserPage() {
 			dataIndex: "status",
 			align: "center",
 			width: 120,
-			render: (status) => <Badge variant={status === BasicStatus.DISABLE ? "error" : "success"}>{status === BasicStatus.DISABLE ? "Disable" : "Enable"}</Badge>,
+			render: (status) => (
+				<Badge variant={status === BasicStatus.DISABLE ? "error" : "success"}>
+					{status === BasicStatus.DISABLE ? "Disable" : "Enable"}
+				</Badge>
+			),
 		},
 		{
 			title: "Action",
@@ -84,7 +88,14 @@ export default function UserPage() {
 				</div>
 			</CardHeader>
 			<CardContent>
-				<Table rowKey="id" size="small" scroll={{ x: "max-content" }} pagination={false} columns={columns} dataSource={USERS} />
+				<Table
+					rowKey="id"
+					size="small"
+					scroll={{ x: "max-content" }}
+					pagination={false}
+					columns={columns}
+					dataSource={USERS}
+				/>
 			</CardContent>
 		</Card>
 	);
