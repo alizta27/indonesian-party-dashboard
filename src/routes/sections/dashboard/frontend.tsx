@@ -170,52 +170,70 @@ export const frontendDashboardRoutes: RouteObject[] = [
 	{
 		path: "administrasi",
 		children: [
-			{ index: true, element: <Navigate to="surat-masuk" replace /> },
+			{
+				index: true,
+				element: <Navigate to="manajemen-surat/surat-masuk" replace />,
+			},
 
 			// 🔸 Manajemen Surat
 			{
-				path: "surat-masuk",
-				element: Component("/pages/administration/letters/incoming"),
-			},
-			{
-				path: "surat-keluar",
-				element: Component("/pages/administration/letters/outgoing"),
-			},
-			{
-				path: "buat-surat",
-				element: Component("/pages/administration/letters/compose"),
-			},
-			{
-				path: "arsip-surat",
-				element: Component("/pages/administration/letters/archive"),
+				path: "manajemen-surat",
+				children: [
+					{
+						path: "surat-masuk",
+						element: Component("/pages/administration/letters/incoming"),
+					},
+					{
+						path: "surat-keluar",
+						element: Component("/pages/administration/letters/outgoing"),
+					},
+					{
+						path: "buat-surat",
+						element: Component("/pages/administration/letters/compose"),
+					},
+					{
+						path: "arsip-surat",
+						element: Component("/pages/administration/letters/archive"),
+					},
+				],
 			},
 
 			// 🔸 Template & Otorisasi
 			{
-				path: "template-surat",
-				element: Component("/pages/administration/templates/list"),
-			},
-			{
-				path: "tanda-tangan",
-				element: Component("/pages/administration/templates/signature"),
-			},
-			{
-				path: "akses-surat",
-				element: Component("/pages/administration/templates/access"),
+				path: "template",
+				children: [
+					{
+						path: "template-surat",
+						element: Component("/pages/administration/templates/list"),
+					},
+					{
+						path: "tanda-tangan",
+						element: Component("/pages/administration/templates/signature"),
+					},
+					// {
+					//   path: "akses-surat",
+					//   element: Component("/pages/administration/templates/access"),
+					// },
+				],
 			},
 
 			// 🔸 Pelacakan & Laporan
 			{
-				path: "disposisi-surat",
-				element: Component("/pages/administration/tracking/disposition"),
-			},
-			{
-				path: "agenda-surat",
-				element: Component("/pages/administration/tracking/schedule"),
-			},
-			{
-				path: "laporan-surat",
-				element: Component("/pages/administration/tracking/reports"),
+				path: "pelacakan-laporan",
+				children: [
+					{
+						path: "disposisi-surat",
+						element: Component("/pages/administration/tracking/disposition"),
+					},
+					{
+						path: "agenda-surat",
+						element: Component("/pages/administration/tracking/schedule"),
+					},
+					{
+						path: "laporan-surat",
+						element: Component("/pages/administration/tracking/reports"),
+					},
+				],
 			},
 		],
 	},

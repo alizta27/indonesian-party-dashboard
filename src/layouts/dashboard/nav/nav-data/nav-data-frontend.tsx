@@ -272,26 +272,26 @@ export const frontendNavData: NavProps["data"] = [
 				children: [
 					{
 						title: "Surat Masuk",
-						path: "/administrasi/surat-masuk",
+						path: "/administrasi/manajemen-surat/surat-masuk",
 					},
 					{
 						title: "Surat Keluar",
-						path: "/administrasi/surat-keluar",
+						path: "/administrasi/manajemen-surat/surat-keluar",
 					},
 					{
 						title: "Buat Surat",
-						path: "/administrasi/buat-surat",
+						path: "/administrasi/manajemen-surat/buat-surat",
 					},
 					{
 						title: "Arsip Surat",
-						path: "/administrasi/arsip-surat",
+						path: "/administrasi/manajemen-surat/arsip-surat",
 					},
 				],
 			},
 			{
-				title: "Template & Otorisasi",
+				title: "Template",
 				icon: <Icon icon="solar:pen-new-square-bold-duotone" size="24" />,
-				path: "/administrasi/template-surat",
+				path: "/administrasi/template",
 				info: (
 					<Badge variant="error">
 						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
@@ -300,11 +300,11 @@ export const frontendNavData: NavProps["data"] = [
 				children: [
 					{
 						title: "Template Surat",
-						path: "/administrasi/template-surat",
+						path: "/administrasi/template/template-surat",
 					},
 					{
 						title: "Tanda Tangan / Paraf",
-						path: "/administrasi/tanda-tangan",
+						path: "/administrasi/template/tanda-tangan",
 					},
 					// {
 					//   title: "Akses & Peran",
@@ -324,15 +324,15 @@ export const frontendNavData: NavProps["data"] = [
 				children: [
 					{
 						title: "Disposisi Surat",
-						path: "/administrasi/disposisi-surat",
+						path: "/administrasi/pelacakan-laporan/disposisi-surat",
 					},
 					{
 						title: "Agenda Surat",
-						path: "/administrasi/agenda-surat",
+						path: "/administrasi/pelacakan-laporan/agenda-surat",
 					},
 					{
 						title: "Laporan Surat",
-						path: "/administrasi/laporan-surat",
+						path: "/administrasi/pelacakan-laporan/laporan-surat",
 					},
 				],
 			},
