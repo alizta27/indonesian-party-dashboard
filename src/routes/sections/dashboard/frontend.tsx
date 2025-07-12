@@ -38,6 +38,10 @@ export const frontendDashboardRoutes: RouteObject[] = [
 				path: "dprd-provinsi",
 				element: Component("/pages/election/pemilu/dprd-provinsi"),
 			},
+			{
+				path: "dprd-kabupaten",
+				element: Component("/pages/election/pemilu/dprd-provinsi"),
+			},
 		],
 	},
 	{
@@ -52,11 +56,72 @@ export const frontendDashboardRoutes: RouteObject[] = [
 				path: "walikota",
 				element: Component("/pages/election/pilkada/walikota"),
 			},
+			{
+				path: "bupati",
+				element: Component("/pages/election/pilkada/walikota"),
+			},
 		],
 	},
 	{
-		path: "real-count",
-		element: Component("/pages/election/real-count"),
+		path: "quick-count",
+		children: [
+			{ index: true, element: <Navigate to="dpr-ri" replace /> },
+			{
+				path: "dpr-ri",
+				element: Component("/pages/election/quick-count"),
+			},
+			{
+				path: "dprd-provinsi",
+				element: Component("/pages/election/quick-count"),
+			},
+			{
+				path: "dprd-kabupaten",
+				element: Component("/pages/election/quick-count"),
+			},
+			{
+				path: "gubernur",
+				element: Component("/pages/election/quick-count"),
+			},
+			{
+				path: "walikota",
+				element: Component("/pages/election/quick-count"),
+			},
+			{
+				path: "bupati",
+				element: Component("/pages/election/quick-count"),
+			},
+		],
+	},
+	{
+		path: "poker",
+		children: [
+			{ index: true, element: <Navigate to="evaluasi/dpp" replace /> },
+			{
+				path: "evaluasi",
+				children: [
+					{
+						path: "dpp",
+						element: Component("/pages/projects/evaluation/dpp"),
+					},
+					{
+						path: "dpd",
+						element: Component("/pages/projects/evaluation/dpd"),
+					},
+					{
+						path: "dpc",
+						element: Component("/pages/projects/evaluation/dpc"),
+					},
+				],
+			},
+			{
+				path: "kegiatan",
+				element: Component("/pages/projects/task-list"),
+			},
+			{
+				path: "timeline",
+				element: Component("/pages/projects/timeline"),
+			},
+		],
 	},
 	// Unused
 	{

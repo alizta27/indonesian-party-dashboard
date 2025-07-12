@@ -67,9 +67,9 @@ export default function RealCount() {
 	);
 	return (
 		<ErrorLayout
-			title="Fitur Dalam Pengembangan"
-			helmetTitle="Real Count"
-			desc="Fitur ini akan memuat data real count hasil Pemilu yang sedang berlangsung, mencakup perolehan suara untuk DPR-RI, DPRD Provinsi, serta DPRD Kabupaten/Kota. Data akan ditampilkan secara visual dan interaktif berdasarkan hasil input petugas partai Hanura di lokasi TPS masing-masing. Mohon bersabar, fitur ini segera di kembangkan."
+			title="Belum Ada Data"
+			helmetTitle="Quick Count"
+			desc="Tidak ada pemilihan yang sedang berlangsung"
 			svg={svg}
 		/>
 	);

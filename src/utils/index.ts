@@ -50,3 +50,21 @@ export const getKabOrKotaBaseOnBpsCode = (pbsCode: string) => {
 	}
 	return "Kab.";
 };
+
+const cleanText = (text: string): string => text.trim().replace(/\s+/g, " ");
+
+/**
+ * Type guard to filter out null and undefined
+ */
+const isNonEmptyString = (value: string | null | undefined): value is string =>
+	typeof value === "string" && value.trim() !== "";
+
+/**
+ * Formats a full address from components
+ */
+export const formatFullAddress = (parts: Array<string | null | undefined>): string => {
+	return parts
+		.filter(isNonEmptyString) // narrow to string
+		.map(cleanText)
+		.join(", ");
+};

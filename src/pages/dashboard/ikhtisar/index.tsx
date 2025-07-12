@@ -12,7 +12,7 @@ import { voteOptions, voteSeries } from "./election-data";
 const quickStats = [
 	{
 		icon: "local:level-dpc.svg",
-		label: "Total Kepengurusan Terbentuk",
+		label: "Kepengurusan Terbentuk",
 		value: "100",
 		percent: 60,
 		color: "#3b82f6", // blue
@@ -20,7 +20,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total DPD Terbentuk",
+		label: "DPD Terbentuk",
 		value: "100",
 		percent: 100,
 		color: "#8b5cf6", // violet
@@ -28,7 +28,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total DPC Terbentuk",
+		label: "DPC Terbentuk",
 		value: "290K+",
 		percent: 80,
 		color: "#f59e42", // orange
@@ -36,7 +36,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total PAC Terbentuk",
+		label: "PAC Terbentuk",
 		value: "839",
 		percent: 80,
 		color: "#10b981", // green
@@ -44,7 +44,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total PR Terbentuk",
+		label: "PR Terbentuk",
 		value: "2,067",
 		percent: 80,
 		color: "#ec4899", // pink
@@ -52,7 +52,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total PAR Terbentuk",
+		label: "PAR Terbentuk",
 		value: "2,067",
 		percent: 50,
 		color: "#facc15", // yellow
@@ -60,7 +60,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total Seluruh Pengurus",
+		label: "Seluruh Pengurus",
 		value: "2,067",
 		percent: 0,
 		color: "#0ea5e9", // sky blue
@@ -68,7 +68,7 @@ const quickStats = [
 	},
 	{
 		icon: "local:dpd.svg",
-		label: "Total Kepengurusan Belum Terbentuk",
+		label: "Kepengurusan Belum Terbentuk",
 		value: "2,067",
 		percent: 0,
 		color: "#a16207", // amber

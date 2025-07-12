@@ -1,5 +1,6 @@
 import { Icon } from "@/components/icon";
 import type { NavProps } from "@/components/nav";
+import { Badge } from "@/ui/badge";
 
 export const frontendNavData: NavProps["data"] = [
 	{
@@ -53,12 +54,17 @@ export const frontendNavData: NavProps["data"] = [
 		],
 	},
 	{
-		name: "Hasil Pemilihan",
+		name: "Pemilihan",
 		items: [
 			{
 				title: "Anggota Legislatif",
 				path: "/pemilu",
 				icon: <Icon icon="solar:user-check-rounded-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
 				children: [
 					{
 						title: "DPR RI",
@@ -78,6 +84,11 @@ export const frontendNavData: NavProps["data"] = [
 				title: "Hasil Pemilu",
 				path: "/pemilu",
 				icon: <Icon icon="solar:file-check-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
 				children: [
 					{
 						title: "DPR RI",
@@ -89,7 +100,7 @@ export const frontendNavData: NavProps["data"] = [
 					},
 					{
 						title: "DPRD Kabupaten",
-						path: "/pemilu/dpr-ri",
+						path: "/pemilu/dprd-kabupaten",
 					},
 				],
 			},
@@ -97,6 +108,11 @@ export const frontendNavData: NavProps["data"] = [
 				title: "Hasil Pilkada",
 				path: "/pilkada",
 				icon: <Icon icon="solar:streets-map-point-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
 				children: [
 					{
 						title: "Gubernur",
@@ -108,14 +124,125 @@ export const frontendNavData: NavProps["data"] = [
 					},
 					{
 						title: "Bupati",
-						path: "/pilkada/walikota",
+						path: "/pilkada/bupati",
 					},
 				],
 			},
+			// {
+			//   title: "Real Count",
+			//   path: "/real-count",
+			//   icon: (
+			//     <Icon icon="solar:calculator-minimalistic-bold-duotone" size="24" />
+			//   ),
+			//   info: (
+			//     <Badge variant="error">
+			//       <Icon
+			//         icon="solar:lock-keyhole-minimalistic-bold-duotone"
+			//         size={14}
+			//       />
+			//     </Badge>
+			//   ),
+			// },
 			{
-				title: "Real Count",
-				path: "/real-count",
+				title: "Quick Count",
+				path: "/quick-count",
 				icon: <Icon icon="solar:alarm-play-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{
+						title: "DPR RI",
+						path: "/quick-count/dpr-ri",
+					},
+					{
+						title: "DPRD Provinsi",
+						path: "/quick-count/dprd-provinsi",
+					},
+					{
+						title: "DPRD Kabupaten",
+						path: "/quick-count/dprd-kabupaten",
+					},
+					{
+						title: "Gubernur",
+						path: "/quick-count/gubernur",
+					},
+					{
+						title: "Walikota",
+						path: "/quick-count/walikota",
+					},
+					{
+						title: "Bupati",
+						path: "/quick-count/bupati",
+					},
+				],
+			},
+		],
+	},
+	{
+		name: "Program Kerja",
+		items: [
+			{
+				title: "Evaluasi",
+				path: "/poker/evaluasi",
+				icon: <Icon icon="solar:graph-new-up-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{ title: "DPP", path: "/poker/evaluasi/dpp" },
+					{ title: "DPD", path: "/poker/evaluasi/dpd" },
+					{ title: "DPC", path: "/poker/evaluasi/dpc" },
+				],
+			},
+			{
+				title: "Kegiatan",
+				path: "/poker/kegiatan",
+				icon: <Icon icon="solar:clipboard-list-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+			},
+			{
+				title: "Timeline Kegiatan",
+				path: "/poker/timeline",
+				icon: <Icon icon="solar:calendar-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+			},
+		],
+	},
+	{
+		name: "Data SiSaleh",
+		items: [
+			{
+				title: "Daftar Caleg",
+				path: "/poker/evaluasi/dpp",
+				icon: <Icon icon="solar:graph-new-up-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+			},
+			{
+				title: "Detail Caleg",
+				path: "/poker/kegiatan",
+				icon: <Icon icon="solar:clipboard-list-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
 			},
 		],
 	},
@@ -314,12 +441,12 @@ export const frontendNavData: NavProps["data"] = [
 	//     //   title: "sys.nav.label",
 	//     //   path: "#label",
 	//     //   icon: <Icon icon="local:ic-label" size="24" />,
-	//     //   info: (
-	//     //     <Badge variant="info">
-	//     //       <Icon icon="solar:bell-bing-bold-duotone" size={14} />
-	//     //       New
-	//     //     </Badge>
-	//     //   ),
+	// info: (
+	//   <Badge variant="info">
+	//     <Icon icon="solar:bell-bing-bold-duotone" size={14} />
+	//     New
+	//   </Badge>
+	// ),
 	//     // },
 	//     // {
 	//     //   title: "sys.nav.link",
