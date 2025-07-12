@@ -144,6 +144,42 @@ export const frontendNavData: NavProps["data"] = [
 			//   ),
 			// },
 			{
+				title: "Real Count",
+				path: "/real-count",
+				icon: <Icon icon="solar:calculator-minimalistic-bold-duotone" size="24" />,
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{
+						title: "DPR RI",
+						path: "/real-count/dpr-ri",
+					},
+					{
+						title: "DPRD Provinsi",
+						path: "/real-count/dprd-provinsi",
+					},
+					{
+						title: "DPRD Kabupaten",
+						path: "/real-count/dprd-kabupaten",
+					},
+					{
+						title: "Gubernur",
+						path: "/real-count/gubernur",
+					},
+					{
+						title: "Walikota",
+						path: "/real-count/walikota",
+					},
+					{
+						title: "Bupati",
+						path: "/real-count/bupati",
+					},
+				],
+			},
+			{
 				title: "Quick Count",
 				path: "/quick-count",
 				icon: <Icon icon="solar:alarm-play-bold-duotone" size="24" />,
@@ -222,28 +258,113 @@ export const frontendNavData: NavProps["data"] = [
 		],
 	},
 	{
+		name: "Administrasi",
+		items: [
+			{
+				title: "Manajemen Surat",
+				icon: <Icon icon="solar:document-bold-duotone" size="24" />,
+				path: "/administrasi/manajemen-surat",
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{
+						title: "Surat Masuk",
+						path: "/administrasi/surat-masuk",
+					},
+					{
+						title: "Surat Keluar",
+						path: "/administrasi/surat-keluar",
+					},
+					{
+						title: "Buat Surat",
+						path: "/administrasi/buat-surat",
+					},
+					{
+						title: "Arsip Surat",
+						path: "/administrasi/arsip-surat",
+					},
+				],
+			},
+			{
+				title: "Template & Otorisasi",
+				icon: <Icon icon="solar:pen-new-square-bold-duotone" size="24" />,
+				path: "/administrasi/template-surat",
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{
+						title: "Template Surat",
+						path: "/administrasi/template-surat",
+					},
+					{
+						title: "Tanda Tangan / Paraf",
+						path: "/administrasi/tanda-tangan",
+					},
+					// {
+					//   title: "Akses & Peran",
+					//   path: "/administrasi/akses-surat",
+					// },
+				],
+			},
+			{
+				title: "Pelacakan & Laporan",
+				icon: <Icon icon="solar:chart-2-bold-duotone" size="24" />,
+				path: "/administrasi/pelacakan-laporan",
+				info: (
+					<Badge variant="error">
+						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
+					</Badge>
+				),
+				children: [
+					{
+						title: "Disposisi Surat",
+						path: "/administrasi/disposisi-surat",
+					},
+					{
+						title: "Agenda Surat",
+						path: "/administrasi/agenda-surat",
+					},
+					{
+						title: "Laporan Surat",
+						path: "/administrasi/laporan-surat",
+					},
+				],
+			},
+		],
+	},
+
+	{
 		name: "Data SiSaleh",
 		items: [
 			{
 				title: "Daftar Caleg",
-				path: "/poker/evaluasi/dpp",
-				icon: <Icon icon="solar:graph-new-up-bold-duotone" size="24" />,
+				path: "/sisaleh/daftar-caleg",
+				icon: <Icon icon="solar:user-speak-rounded-bold-duotone" size="24" />,
 				info: (
 					<Badge variant="error">
 						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
 					</Badge>
 				),
 			},
-			{
-				title: "Detail Caleg",
-				path: "/poker/kegiatan",
-				icon: <Icon icon="solar:clipboard-list-bold-duotone" size="24" />,
-				info: (
-					<Badge variant="error">
-						<Icon icon="solar:lock-keyhole-minimalistic-bold-duotone" size={14} />
-					</Badge>
-				),
-			},
+			// {
+			//   title: "Input Konstituen",
+			//   path: "/sisaleh/input-konstituen",
+			//   icon: <Icon icon="solar:user-hand-up-bold-duotone" size="24" />,
+			//   info: (
+			//     <Badge variant="error">
+			//       <Icon
+			//         icon="solar:lock-keyhole-minimalistic-bold-duotone"
+			//         size={14}
+			//       />
+			//     </Badge>
+			//   ),
+			// },
 		],
 	},
 	// {

@@ -93,6 +93,36 @@ export const frontendDashboardRoutes: RouteObject[] = [
 		],
 	},
 	{
+		path: "real-count",
+		children: [
+			{ index: true, element: <Navigate to="dpr-ri" replace /> },
+			{
+				path: "dpr-ri",
+				element: Component("/pages/election/real-count"),
+			},
+			{
+				path: "dprd-provinsi",
+				element: Component("/pages/election/real-count"),
+			},
+			{
+				path: "dprd-kabupaten",
+				element: Component("/pages/election/real-count"),
+			},
+			{
+				path: "gubernur",
+				element: Component("/pages/election/real-count"),
+			},
+			{
+				path: "walikota",
+				element: Component("/pages/election/real-count"),
+			},
+			{
+				path: "bupati",
+				element: Component("/pages/election/real-count"),
+			},
+		],
+	},
+	{
 		path: "poker",
 		children: [
 			{ index: true, element: <Navigate to="evaluasi/dpp" replace /> },
@@ -120,6 +150,72 @@ export const frontendDashboardRoutes: RouteObject[] = [
 			{
 				path: "timeline",
 				element: Component("/pages/projects/timeline"),
+			},
+		],
+	},
+	{
+		path: "sisaleh",
+		children: [
+			{ index: true, element: <Navigate to="caleg" replace /> },
+			{
+				path: "daftar-caleg",
+				element: Component("/pages/sisaleh/caleg-list"),
+			},
+			{
+				path: "input-konstituen",
+				element: Component("/pages/sisaleh/input-konstituen"),
+			},
+		],
+	},
+	{
+		path: "administrasi",
+		children: [
+			{ index: true, element: <Navigate to="surat-masuk" replace /> },
+
+			// 🔸 Manajemen Surat
+			{
+				path: "surat-masuk",
+				element: Component("/pages/administration/letters/incoming"),
+			},
+			{
+				path: "surat-keluar",
+				element: Component("/pages/administration/letters/outgoing"),
+			},
+			{
+				path: "buat-surat",
+				element: Component("/pages/administration/letters/compose"),
+			},
+			{
+				path: "arsip-surat",
+				element: Component("/pages/administration/letters/archive"),
+			},
+
+			// 🔸 Template & Otorisasi
+			{
+				path: "template-surat",
+				element: Component("/pages/administration/templates/list"),
+			},
+			{
+				path: "tanda-tangan",
+				element: Component("/pages/administration/templates/signature"),
+			},
+			{
+				path: "akses-surat",
+				element: Component("/pages/administration/templates/access"),
+			},
+
+			// 🔸 Pelacakan & Laporan
+			{
+				path: "disposisi-surat",
+				element: Component("/pages/administration/tracking/disposition"),
+			},
+			{
+				path: "agenda-surat",
+				element: Component("/pages/administration/tracking/schedule"),
+			},
+			{
+				path: "laporan-surat",
+				element: Component("/pages/administration/tracking/reports"),
 			},
 		],
 	},
